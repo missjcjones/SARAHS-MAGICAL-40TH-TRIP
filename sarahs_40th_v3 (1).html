@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah's 40th — Low Faff. High Fun. Totally Legendary.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --void:#050C12;
+  --deep:#0B1622;
+  --surface:rgba(255,255,255,0.04);
+  --border:rgba(255,255,255,0.08);
+  --coral:#FF4D6D;
+  --violet:#8B5CF6;
+  --teal:#06D6A0;
+  --gold:#FFD166;
+  --clay:#D4724A;
+  --cream:#F0E6D3;
+  --muted:rgba(240,230,211,0.5);
+  --faint:rgba(240,230,211,0.15);
+}
+
+body{font-family:'DM Sans',sans-serif;background:var(--void);color:var(--cream);overflow-x:hidden;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--void);}
+::-webkit-scrollbar-thumb{background:var(--violet);border-radius:2px;}
+
+/* ── RAINBOW STRIPES ── */
+.stripe{height:4px;background:linear-gradient(90deg,#FF4D6D,#FF8C42,#FFD166,#06D6A0,#3B82F6,#8B5CF6,#FF4D6D);background-size:300%;animation:flow 5s linear infinite;}
+@keyframes flow{to{background-position:300% center;}}
+
+/* ── HERO ── */
+.hero{
+  min-height:420px;
+  background:radial-gradient(ellipse at 20% 80%,rgba(139,92,246,0.3) 0%,transparent 55%),
+             radial-gradient(ellipse at 80% 20%,rgba(6,214,160,0.2) 0%,transparent 50%),
+             radial-gradient(ellipse at 50% 50%,rgba(255,77,109,0.15) 0%,transparent 60%),
+             var(--void);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:3rem 2rem 4rem;
+  position:relative;overflow:hidden;
+}
+
+.spore{
+  position:absolute;border-radius:50%;filter:blur(60px);opacity:0.15;
+  animation:drift 12s ease-in-out infinite alternate;
+}
+.spore1{width:300px;height:300px;background:var(--violet);top:-50px;left:-80px;animation-duration:14s;}
+.spore2{width:250px;height:250px;background:var(--teal);bottom:-60px;right:-60px;animation-duration:11s;animation-delay:-3s;}
+.spore3{width:200px;height:200px;background:var(--coral);top:40%;right:10%;animation-duration:9s;animation-delay:-6s;}
+@keyframes drift{from{transform:translate(0,0) scale(1);}to{transform:translate(30px,20px) scale(1.1);}}
+
+.hero-tag{
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--teal);margin-bottom:1rem;position:relative;
+}
+
+.grad-text{
+  background:linear-gradient(135deg,#FF4D6D,#FFD166,#06D6A0,#8B5CF6,#FF4D6D);
+  background-size:300%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:flow 6s linear infinite;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,8vw,5.5rem);
+  line-height:1.05;position:relative;margin-bottom:.5rem;
+  color:var(--cream);
+}
+.hero h1 .highlight{font-style:italic;}
+
+.hero-sub{font-size:15px;color:var(--muted);font-weight:300;margin-bottom:.5rem;position:relative;}
+.double-cel{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,rgba(255,77,109,0.2),rgba(139,92,246,0.2));
+  border:1px solid rgba(255,77,109,0.3);
+  border-radius:100px;padding:6px 18px;
+  font-size:12px;color:var(--coral);font-weight:500;
+  margin-bottom:2rem;position:relative;
+}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;position:relative;}
+.chip{
+  background:rgba(255,255,255,0.06);border:1px solid var(--border);
+  border-radius:100px;padding:6px 16px;font-size:12px;color:var(--muted);
+}
+.chip.live{background:rgba(255,77,109,0.15);border-color:rgba(255,77,109,0.4);color:var(--coral);font-weight:500;}
+.chip.green{background:rgba(6,214,160,0.12);border-color:rgba(6,214,160,0.3);color:var(--teal);}
+
+/* ── AUDIO ── */
+.audio-wrap{
+  background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(6,214,160,0.1));
+  border-bottom:1px solid var(--border);
+  padding:2.5rem 1.5rem;
+}
+.audio-inner{max-width:640px;margin:0 auto;text-align:center;}
+.audio-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:.5rem;}
+.audio-title{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--cream);margin-bottom:.25rem;}
+.audio-sub{font-size:13px;color:var(--muted);margin-bottom:1.5rem;font-weight:300;}
+
+.player-box{
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  border-radius:18px;padding:1.75rem;
+  display:flex;flex-direction:column;align-items:center;gap:1rem;
+}
+.play-btn{
+  width:66px;height:66px;border-radius:50%;
+  background:linear-gradient(135deg,var(--coral),var(--violet));
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;border:none;transition:transform .2s;
+  animation:glow-pulse 3s ease-in-out infinite;
+}
+@keyframes glow-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,77,109,0.4);}
+  50%{box-shadow:0 0 20px 8px rgba(255,77,109,0);}
+}
+.play-btn:hover{transform:scale(1.1);}
+.play-btn svg{fill:white;margin-left:4px;}
+
+.player-info .p-name{font-size:14px;font-weight:500;color:var(--cream);margin-bottom:3px;}
+.player-info .p-meta{font-size:12px;color:var(--muted);}
+.prog-bar{width:100%;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--violet),var(--teal));border-radius:2px;transition:width .5s;}
+.wa-tip{font-size:11px;color:rgba(240,230,211,0.3);margin-top:.75rem;}
+
+/* ── TABS ── */
+.tabs-wrap{
+  background:rgba(5,12,18,0.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;
+}
+.tabs{display:flex;max-width:1000px;margin:0 auto;overflow-x:auto;scrollbar-width:none;padding:0 1rem;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{
+  padding:.85rem 1rem;font-size:13px;font-weight:500;
+  color:rgba(240,230,211,0.35);cursor:pointer;white-space:nowrap;
+  border:none;border-bottom:2px solid transparent;
+  background:none;font-family:'DM Sans',sans-serif;
+  transition:all .2s;letter-spacing:.3px;
+}
+.tab:hover{color:var(--cream);}
+.tab.on{color:var(--coral);border-bottom-color:var(--coral);}
+
+/* ── SECTIONS ── */
+.sec{display:none;}
+.sec.on{display:block;animation:up .35s ease;}
+@keyframes up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+.wrap{max-width:1000px;margin:0 auto;padding:3rem 1.5rem;}
+
+/* ── MOODBOARD ── */
+.mood{
+  border-radius:20px;overflow:hidden;height:320px;
+  position:relative;margin-bottom:2rem;
+  background:var(--deep);
+}
+.mood img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;filter:brightness(0.7) saturate(1.2);}
+.mood:hover img{transform:scale(1.04);}
+.mood-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(5,12,18,.92) 0%,rgba(5,12,18,.1) 70%);
+}
+.mood-text{position:absolute;bottom:0;left:0;right:0;padding:2rem;}
+.mood-eye{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem;}
+.mood-title{font-family:'Playfair Display',serif;font-size:2.2rem;color:white;line-height:1.15;}
+
+/* ── PILLS ── */
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:2rem;}
+.pill{
+  padding:5px 13px;border-radius:100px;font-size:12px;font-weight:500;
+  border:1px solid;
+}
+.p-coral{background:rgba(255,77,109,.12);border-color:rgba(255,77,109,.3);color:#FF8FA3;}
+.p-violet{background:rgba(139,92,246,.12);border-color:rgba(139,92,246,.3);color:#A78BFA;}
+.p-teal{background:rgba(6,214,160,.1);border-color:rgba(6,214,160,.25);color:#34D399;}
+.p-gold{background:rgba(255,209,102,.1);border-color:rgba(255,209,102,.25);color:#FCD34D;}
+.p-clay{background:rgba(212,114,74,.12);border-color:rgba(212,114,74,.3);color:#FB923C;}
+
+/* ── BODY TEXT ── */
+.body-txt{font-size:15px;line-height:1.9;color:var(--muted);font-weight:300;margin-bottom:2rem;}
+
+/* ── STAT CARDS ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-bottom:2rem;}
+.stat{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:1.25rem;
+  transition:border-color .2s,transform .2s;
+}
+.stat:hover{border-color:rgba(139,92,246,.3);transform:translateY(-2px);}
+.stat-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+.stat-val{font-size:1.1rem;font-weight:600;color:var(--coral);}
+.stat-note{font-size:12px;color:rgba(240,230,211,.3);margin-top:3px;font-weight:300;}
+
+/* ── HIGHLIGHT BOXES ── */
+.hi{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:1.6rem;margin-bottom:1.5rem;
+}
+.hi h3{
+  font-family:'Playfair Display',serif;font-size:1.05rem;
+  color:var(--cream);margin-bottom:1rem;
+}
+.hi-row{display:flex;gap:11px;align-items:flex-start;margin-bottom:.7rem;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--coral);margin-top:8px;flex-shrink:0;}
+.dot.v{background:var(--violet);}
+.dot.t{background:var(--teal);}
+.dot.g{background:var(--gold);}
+.hi-txt{font-size:14px;line-height:1.7;color:var(--muted);}
+
+/* ── TWO COL ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.5rem;}
+@media(max-width:580px){.two-col{grid-template-columns:1fr;}}
+
+/* ── VENUE IMAGE ── */
+.v-img{width:100%;height:170px;object-fit:cover;border-radius:10px;margin-bottom:.9rem;filter:brightness(.8) saturate(1.1);}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  background:linear-gradient(135deg,var(--coral),var(--violet));
+  color:white;padding:11px 22px;border-radius:100px;
+  font-size:13px;font-weight:500;text-decoration:none;
+  border:none;cursor:pointer;font-family:'DM Sans',sans-serif;
+  transition:opacity .2s,transform .2s;
+}
+.btn:hover{opacity:.85;transform:scale(1.03);}
+.btn.ghost{
+  background:transparent;
+  border:1px solid rgba(240,230,211,.2);
+  color:var(--muted);margin-left:10px;
+}
+.btn.ghost:hover{border-color:var(--cream);color:var(--cream);}
+
+/* ── WILDCARD BADGE ── */
+.wc{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(135deg,var(--gold),var(--coral));
+  color:var(--void);padding:4px 14px;border-radius:100px;
+  font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+
+/* ── PRICE TABLE ── */
+.pt{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:2rem;}
+.pt-head{
+  background:rgba(139,92,246,.15);padding:.9rem 1.4rem;
+  display:grid;grid-template-columns:1.6fr 1fr 1.2fr;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--violet);
+}
+.pt-row{
+  padding:.85rem 1.4rem;
+  display:grid;grid-template-columns:1.6fr 1fr 1.2fr;
+  font-size:13.5px;border-bottom:1px solid var(--border);
+}
+.pt-row:last-child{border-bottom:none;background:rgba(255,77,109,.05);}
+.pt-item{color:var(--muted);font-weight:300;}
+.pt-cost{font-weight:600;color:var(--coral);}
+.pt-note{font-size:11px;color:rgba(240,230,211,.3);}
+
+/* ── TIMELINE ── */
+.tl{position:relative;padding-left:2rem;}
+.tl::before{
+  content:'';position:absolute;left:0;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(to bottom,var(--coral),var(--violet),var(--teal),var(--gold));
+  border-radius:1px;
+}
+.tl-item{position:relative;margin-bottom:2.2rem;}
+.tl-dot{
+  position:absolute;left:-2.42rem;top:5px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--coral);border:2px solid var(--void);
+}
+.tl-date{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--coral);margin-bottom:4px;}
+.tl-name{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--cream);margin-bottom:.4rem;}
+.tl-desc{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300;}
+.jake-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(6,214,160,.12);border:1px solid rgba(6,214,160,.2);
+  border-radius:100px;padding:2px 10px;font-size:11px;color:var(--teal);
+  margin-left:8px;vertical-align:middle;
+}
+
+/* ── VIBE BANNER ── */
+.vibe{
+  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(255,77,109,.08));
+  border:1px solid rgba(139,92,246,.2);
+  border-radius:16px;padding:1.5rem;margin-bottom:2rem;
+  position:relative;overflow:hidden;
+}
+.vibe::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--coral),var(--violet),var(--teal),var(--gold));
+}
+.vibe-txt{font-size:15px;color:var(--muted);line-height:1.85;font-weight:300;}
+.vibe-txt strong{color:var(--cream);font-weight:600;}
+
+/* ── SECTION HEADING ── */
+.sec-title{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--cream);margin-bottom:.4rem;}
+.sec-sub{font-size:14px;color:var(--muted);font-weight:300;margin-bottom:2rem;}
+.divider{height:1px;background:var(--border);margin:2rem 0;}
+
+/* ── RESEARCH GRID ── */
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem;margin-bottom:2rem;}
+.rc{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:1.4rem;
+  transition:transform .2s,border-color .2s;
+}
+.rc:hover{transform:translateY(-3px);border-color:rgba(139,92,246,.3);}
+.rc-ico{font-size:20px;margin-bottom:.5rem;}
+.rc-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--cream);margin-bottom:.4rem;}
+.rc-body{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;}
+.rc-link{display:inline-block;margin-top:.6rem;font-size:12px;color:var(--teal);font-weight:500;text-decoration:none;}
+
+/* ── NOTEBOOKLM DOCS ── */
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-bottom:2rem;}
+.doc-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  transition:transform .2s,border-color .2s;
+}
+.doc-card:hover{transform:translateY(-3px);border-color:rgba(6,214,160,.3);}
+.doc-img{width:100%;height:140px;object-fit:cover;filter:brightness(.7) saturate(1.2);}
+.doc-body{padding:1rem;}
+.doc-title{font-size:14px;font-weight:500;color:var(--cream);margin-bottom:4px;}
+.doc-meta{font-size:12px;color:var(--muted);font-weight:300;}
+
+/* ── DINING CARD ── */
+.dining-hero{
+  border-radius:18px;overflow:hidden;height:260px;
+  position:relative;margin-bottom:1.5rem;
+}
+.dining-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.6) saturate(1.3);}
+.dining-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,12,18,.9) 0%,transparent 60%);}
+.dining-text{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;}
+.dining-tag{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:.3rem;}
+.dining-name{font-family:'Playfair Display',serif;font-size:1.4rem;color:white;}
+.dining-note{font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;}
+
+/* ── FOOTER ── */
+.footer{
+  background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(6,214,160,.08));
+  border-top:1px solid var(--border);
+  padding:2.5rem 2rem;text-align:center;
+}
+.footer p{font-size:13px;color:rgba(240,230,211,.35);font-weight:300;}
+.footer p+p{margin-top:5px;}
+.footer strong{color:var(--coral);}
+
+.link-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.25);
+  border-radius:100px;padding:3px 12px;font-size:11px;color:#A78BFA;
+  text-decoration:none;margin-top:.5rem;margin-right:5px;
+}
+.link-pill:hover{background:rgba(139,92,246,.25);}
+
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<!-- ░░ HERO ░░ -->
+<div class="hero">
+  <div class="spore spore1"></div>
+  <div class="spore spore2"></div>
+  <div class="spore spore3"></div>
+  <div class="hero-tag">The Birthday Blueprint · Made with love by Jess 🌈</div>
+  <h1><span class="highlight grad-text">Sarah's</span><br>The Big 4-0</h1>
+  <p class="hero-sub">Wednesday 29 July 2026 · Bristol & Beyond · Low Faff. High Fun. Totally Legendary.</p>
+  <div class="double-cel">🎓 Double celebration — acupuncturist AND 40! 🌿</div>
+  <div class="chips">
+    <span class="chip live">🎂 29 July — She's 40!</span>
+    <span class="chip green">🚤 Wknd 1 · 25–26 Jul</span>
+    <span class="chip">🌊 Midweek · Cornwall</span>
+    <span class="chip">⛺ Wknd 2 · 31 Jul–3 Aug</span>
+    <span class="chip">🎪 Wildcard · The Wyldes</span>
+  </div>
+</div>
+
+<!-- ░░ AUDIO ░░ -->
+<div class="audio-wrap">
+  <div class="audio-inner">
+    <div class="audio-label">NotebookLM Birthday Podcast · DUO Format</div>
+    <div class="audio-title">Sarah's Low Faff, High Fun 40th</div>
+    <div class="audio-sub">31 mins · Generated from real planning conversations · Send as WhatsApp Document</div>
+    <div class="player-box">
+      <div class="play-btn" id="pb" onclick="tp()">
+        <svg id="pi" width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="player-info">
+        <div class="p-name">Sarahs_Low_Faff_High_Fun_40th.m4a</div>
+        <div class="p-meta">31:22 · 16MB · Compressed & ready</div>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" id="pf"></div></div>
+    </div>
+    <div class="wa-tip">💬 WhatsApp → attachment icon → Document (not audio/photo) for full quality</div>
+  </div>
+</div>
+
+<!-- ░░ TABS ░░ -->
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab on" onclick="show('ov',this)">🌈 Overview</button>
+    <button class="tab" onclick="show('bt',this)">🚤 Ferry Party</button>
+    <button class="tab" onclick="show('gl',this)">⛺ Glamping</button>
+    <button class="tab" onclick="show('cw',this)">🌊 Cornwall</button>
+    <button class="tab" onclick="show('wy',this)">🎪 The Wyldes</button>
+    <button class="tab" onclick="show('fd',this)">🍄 Wild Dining</button>
+    <button class="tab" onclick="show('fp',this)">✨ Full Plan</button>
+    <button class="tab" onclick="show('nb',this)">📓 NotebookLM</button>
+    <button class="tab" onclick="show('rs',this)">📋 Research</button>
+  </div>
+</div>
+
+<!-- ════════════════════ OVERVIEW ════════════════════ -->
+<div id="tab-ov" class="sec on">
+  <div class="wrap">
+    <div class="vibe">
+      <div class="vibe-txt">Sarah is <strong>rainbow tutus, face paint at 2am, climbing trees at festivals, boat trips in the Philippines, dancing in cornfields and campfire conversations until dawn.</strong> She just graduated as an acupuncturist AND turns 40. This is a <strong>double celebration of the most extraordinary human.</strong> Her birthday has to match her energy — <strong>wild, warm, magical, completely her.</strong></div>
+    </div>
+
+    <div class="sec-title">The Birthday Week</div>
+    <p class="sec-sub">Four chapters. Maximum fun. Recovery baked in. Totally Sarah.</p>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--coral)"></div>
+        <div class="tl-date">Fri 25 – Sun 26 July · Weekend 1</div>
+        <div class="tl-name">The Bristol Ferry Party 🚤</div>
+        <div class="tl-desc">Everyone invited — big colourful river celebration on Bristol's Floating Harbour. Licensed bar, music, all her people. Jake is at a wedding this weekend but everyone else is IN. ~£20–25pp, totally low faff, company handles everything.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--gold)"></div>
+        <div class="tl-date">Mon 28 – Thu 31 July · Midweek</div>
+        <div class="tl-name">The Cornish Escape + Birthday! 🌊 <span class="jake-badge">✓ Jake here</span></div>
+        <div class="tl-desc">Drive to Bude with Jake (back from wedding Monday!), Jess and the inner circle. Summerleaze Beach, sea pool swimming, Wild Dining at Coombeshead Farm, Merrymoor Inn, coastal walks. Wednesday 29th is THE birthday — golden Cornish sunshine, proper magic.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--teal)"></div>
+        <div class="tl-date">Fri 31 Jul – Mon 3 Aug · Weekend 2</div>
+        <div class="tl-name">The Intimate Glamping Magic ⛺ <span class="jake-badge">✓ Jake here</span></div>
+        <div class="tl-desc">Ekopod exclusive hire near Bude. Closest crew only — Jess, Jake, Luca, Toby, Hannah, Rosie. Wild Spa, fire pits, geodomes under the stars, wood-fired pizza, long slow mornings. Back to work Tuesday feeling GLORIOUS not wrecked.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--gold)"></div>
+        <div class="tl-date">★ Wildcard — swap Weekend 2 for...</div>
+        <div class="tl-name">Her Own Festival at The Wyldes 🎪</div>
+        <div class="tl-desc">Exclusive hire of The Wyldes festival site near Bude. Real stage, real PA, real bar, her lineup. Everyone camps on site. From £4,950 midweek split across the group. The birthday story she tells forever.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card-grid">
+      <div class="stat"><div class="stat-lbl">Birthday</div><div class="stat-val">Wed 29 July</div><div class="stat-note">Whole week off 🎉</div></div>
+      <div class="stat"><div class="stat-lbl">Jake away</div><div class="stat-val">Sat 25 – Sun 26</div><div class="stat-note">Back Monday for everything else ✓</div></div>
+      <div class="stat"><div class="stat-lbl">Ferry Party</div><div class="stat-val">£20–25pp</div><div class="stat-note">Most affordable celebration</div></div>
+      <div class="stat"><div class="stat-lbl">Double win</div><div class="stat-val">40th + Acupuncturist</div><div class="stat-note">Graduate & birthday queen 🌿</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ FERRY PARTY ════════════════════ -->
+<div id="tab-bt" class="sec">
+  <div class="wrap">
+    <div class="mood">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Bristol_Harbour_at_dusk.jpg/1280px-Bristol_Harbour_at_dusk.jpg"
+           onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Bristol_harbourside.jpg/1280px-Bristol_harbourside.jpg'"
+           alt="Bristol Floating Harbour"/>
+      <div class="mood-grad"></div>
+      <div class="mood-text">
+        <div class="mood-eye">Option 1 · Bristol Floating Harbour · Sat 26 July</div>
+        <div class="mood-title">The Ferry Party</div>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill p-coral">Low Faff</span><span class="pill p-coral">High Fun</span>
+      <span class="pill p-teal">Everyone Invited</span><span class="pill p-violet">Floating Harbour</span>
+      <span class="pill p-gold">£20–25pp</span><span class="pill p-clay">2–3 Hours</span>
+    </div>
+
+    <p class="body-txt">Bristol's iconic Floating Harbour — private hire means it's entirely Sarah's. Music on deck, bar flowing, all her favourite humans in one place on the water. The boat company handles absolutely everything. She just shows up in full festival gear and dances. Jake's away this weekend so it's the big social celebration for the whole crew — everyone together, no exceptions.</p>
+
+    <div class="hi">
+      <h3>Why Sarah Will Love This</h3>
+      <div class="hi-row"><div class="dot"></div><div class="hi-txt">Zero organising stress — company handles everything, she just arrives</div></div>
+      <div class="hi-row"><div class="dot"></div><div class="hi-txt">Contained 2-3 hours — big energy then done, no all-nighter recovery</div></div>
+      <div class="hi-row"><div class="dot"></div><div class="hi-txt">Everyone at once — the whole Bristol crew celebrating her together</div></div>
+      <div class="hi-row"><div class="dot"></div><div class="hi-txt">Beautiful Bristol Floating Harbour, city glowing all around them</div></div>
+      <div class="hi-row"><div class="dot"></div><div class="hi-txt">Optional pub stops — The Pump House, Cottage Inn, The Ostrich</div></div>
+      <div class="hi-row"><div class="dot"></div><div class="hi-txt">Most budget-friendly option — nobody gets left out</div></div>
+    </div>
+
+    <div class="card-grid">
+      <div class="stat"><div class="stat-lbl">Capacity</div><div class="stat-val">20–67 people</div><div class="stat-note">Multiple boats available</div></div>
+      <div class="stat"><div class="stat-lbl">Cost</div><div class="stat-val">£20–25pp</div><div class="stat-note">Or from £390 full hire</div></div>
+      <div class="stat"><div class="stat-lbl">Duration</div><div class="stat-val">2–3 hours</div><div class="stat-note">Perfect energy level</div></div>
+      <div class="stat"><div class="stat-lbl">Jake</div><div class="stat-val">Away this wknd</div><div class="stat-note">At a friend's wedding</div></div>
+    </div>
+
+    <a class="btn" href="https://bristolpacket.co.uk/boat-hire-bristol/" target="_blank">Bristol Packet Boats ↗</a>
+    <a class="btn ghost" href="https://www.bristolferry.com/private-hire/" target="_blank">Bristol Ferry Private Hire ↗</a>
+  </div>
+</div>
+
+<!-- ════════════════════ GLAMPING ════════════════════ -->
+<div id="tab-gl" class="sec">
+  <div class="wrap">
+    <div class="mood">
+      <img src="https://www.naturesnestglamping.co.uk/wp-content/uploads/2022/06/Natures-Nest-Glamping-Herefordshire-Wye-Valley-6.jpg"
+           onerror="this.src='https://images.unsplash.com/photo-1537905569824-f89f14cceb68?w=1200'"
+           alt="Glamping starry night hot tub"/>
+      <div class="mood-grad"></div>
+      <div class="mood-text">
+        <div class="mood-eye">Weekend 2 · 31 Jul – 3 Aug · Jake is BACK ✓</div>
+        <div class="mood-title">The Intimate Glamping Magic</div>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill p-violet">Jake is back!</span>
+      <span class="pill p-coral">Hot Tubs</span><span class="pill p-teal">Wild Spa</span>
+      <span class="pill p-gold">Fire Pits</span><span class="pill p-clay">Stargazing</span>
+      <span class="pill p-teal">Pizza Oven</span>
+    </div>
+
+    <p class="body-txt">Friday to Monday with her absolute closest people — Jess, Jake (back from wedding!), Luca, Toby, Hannah, Rosie. Hot tubs under Cornish stars, fire pits crackling, Wild Spa sessions at dawn, wood-fired pizza, long slow mornings. The intimate magic that makes a birthday feel truly held.</p>
+
+    <div class="two-col">
+      <div class="hi">
+        <img src="https://ekopod.co.uk/wp-content/uploads/2022/10/Ekopod-Glamping-Cornwall-Geodome.jpg"
+             onerror="this.src='https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600'"
+             alt="Ekopod Cornwall" class="v-img"/>
+        <h3>⭐ Ekopod, Cornwall</h3>
+        <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Edge of Bodmin Moor — 20 mins from Bude beaches</div></div>
+        <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Wild Spa — woodland sauna, cold drench, forest bathing by stream</div></div>
+        <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Sleeps up to 26 — geodomes + safari tents</div></div>
+        <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Exclusive hire ~£200pp incl breakfast hamper + spa</div></div>
+        <a class="rc-link" href="https://ekopod.co.uk/exclusive-hire-glamping-site-cornwall" target="_blank">ekopod.co.uk ↗</a>
+      </div>
+      <div class="hi">
+        <img src="https://www.naturesnestglamping.co.uk/wp-content/uploads/2022/06/Natures-Nest-Glamping-Herefordshire-Wye-Valley-3.jpg"
+             onerror="this.src='https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=600'"
+             alt="Nature's Nest Wye Valley" class="v-img"/>
+        <h3>Nature's Nest, Wye Valley</h3>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">River Wye access — paddleboards on site</div></div>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">4 luxury canvas cottages, each sleeps 6</div></div>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">Private hot tubs, fire pits, pizza oven</div></div>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">45 mins from Bristol — easy access</div></div>
+        <a class="rc-link" href="https://www.naturesnestglamping.co.uk/" target="_blank">naturesnestglamping.co.uk ↗</a>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="stat"><div class="stat-lbl">Dates</div><div class="stat-val">31 Jul – 3 Aug</div><div class="stat-note">Fri to Mon, full recovery built in</div></div>
+      <div class="stat"><div class="stat-lbl">Ekopod Cost</div><div class="stat-val">~£200pp</div><div class="stat-note">Incl. breakfast + Wild Spa</div></div>
+      <div class="stat"><div class="stat-lbl">Drive (Ekopod)</div><div class="stat-val">~3 hrs</div><div class="stat-note">From Bristol via M5/A30</div></div>
+      <div class="stat"><div class="stat-lbl">Jake</div><div class="stat-val">✓ Back for this!</div><div class="stat-note">Returns Monday after wedding</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ CORNWALL ════════════════════ -->
+<div id="tab-cw" class="sec">
+  <div class="wrap">
+    <div class="mood">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bude_Sea_Pool.jpg/1280px-Bude_Sea_Pool.jpg"
+           alt="Bude Sea Pool Cornwall"/>
+      <div class="mood-grad"></div>
+      <div class="mood-text">
+        <div class="mood-eye">Midweek · Mon 28 – Thu 31 July · Jake back Mon ✓</div>
+        <div class="mood-title">The Cornish Escape</div>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill p-teal">Beach Therapy</span>
+      <span class="pill p-gold">Golden Sand</span>
+      <span class="pill p-coral">Sea Pool</span>
+      <span class="pill p-violet">Coastal Walks</span>
+      <span class="pill p-clay">Wild Dining</span>
+      <span class="pill p-teal">Jake is back Mon ✓</span>
+    </div>
+
+    <p class="body-txt">Jake is back from the wedding on Monday — so the whole midweek Cornish escape has the full gang. Beach days, sea swimming in the historic tidal pool, Merrymoor Inn garden pub, a magical farm dinner at Coombeshead (Michelin-rated, 30 mins from Bude), foraging walks on the coast. Wednesday 29th is THE birthday — golden Cornish sunshine, salt air and the people she loves most.</p>
+
+    <div class="two-col">
+      <div class="hi">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bude_Sea_Pool.jpg/640px-Bude_Sea_Pool.jpg"
+             alt="Bude Sea Pool" class="v-img"/>
+        <h3>Bude Highlights</h3>
+        <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Summerleaze Beach — historic 1930s sea pool, magical for a birthday swim</div></div>
+        <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Crocklets Beach — golden sand at low tide, surf, rock pools</div></div>
+        <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Bude Canal — kayak through the prettiest Cornish countryside</div></div>
+        <div class="hi-row"><div class="dot t"></div><div class="hi-txt">South West Coast Path — dramatic clifftop walks, stunning views</div></div>
+      </div>
+      <div class="hi">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/7b/0c/30/the-merrymoor-inn.jpg"
+             onerror="this.src='https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600'"
+             alt="Merrymoor Inn Mawgan Porth" class="v-img"/>
+        <h3>Merrymoor Inn, Mawgan Porth</h3>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">Stunning coastal pub with a gorgeous garden and sea views</div></div>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">Local seafood, proper Cornish ales, incredible atmosphere</div></div>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">Right next to Mawgan Porth beach — walk straight there</div></div>
+        <a class="rc-link" href="https://www.themerrymoor.co.uk/" target="_blank">themerrymoor.co.uk ↗</a>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="stat"><div class="stat-lbl">Drive from Bristol</div><div class="stat-val">3–3.5 hrs</div><div class="stat-note">M5 then A39 Atlantic Highway</div></div>
+      <div class="stat"><div class="stat-lbl">Jake back</div><div class="stat-val">Monday 28th</div><div class="stat-note">Here for birthday & all of midweek</div></div>
+      <div class="stat"><div class="stat-lbl">Ekopod from Bude</div><div class="stat-val">20–30 mins</div><div class="stat-note">Beach then glamping — perfect</div></div>
+      <div class="stat"><div class="stat-lbl">Vibe</div><div class="stat-val">Sun + Salt + Magic</div><div class="stat-note">No agenda, full freedom</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ THE WYLDES ════════════════════ -->
+<div id="tab-wy" class="sec">
+  <div class="wrap">
+    <div class="wc">★ Wildcard — Her Own Festival</div>
+
+    <div class="mood">
+      <img src="https://images.squarespace-cdn.com/content/v1/64f9db3212fb9b5ede74b8ce/d8a61d97-aff4-4c5e-a2d6-0af91e1b3b07/Underworld-2024-Batch2WebRes-Credit-%40ollysreed-268.jpg"
+           onerror="this.src='https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=1200'"
+           alt="The Wyldes Cornwall festival"/>
+      <div class="mood-grad"></div>
+      <div class="mood-text">
+        <div class="mood-eye">Wildcard · Week St Mary, near Bude, Cornwall</div>
+        <div class="mood-title">The Wyldes — Her Stage. Her Night.</div>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill p-gold">Exclusive Hire</span>
+      <span class="pill p-coral">Real Festival Site</span>
+      <span class="pill p-violet">Her Lineup</span>
+      <span class="pill p-teal">Everyone Camps On Site</span>
+      <span class="pill p-clay">Near Bude</span>
+    </div>
+
+    <p class="body-txt">The Wyldes hosted Paloma Faith, Fatboy Slim, Bastille, IDLES, Rag'n'Bone Man and Rudimental on its Hero Stage. Private hire gives Sarah that exact stage, that exact PA, that exact bar — for her 40th. Her lineup, her people in the fields, her bar, her festival. The birthday story she'll tell for thirty years.</p>
+
+    <div class="hi">
+      <h3>What Exclusive Hire Includes</h3>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Hero Stage with full professional PA system + lighting rig</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Fully licensed bar + professional kitchen and chef team</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">They use 18 years of music contacts to book her perfect lineup</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">27 bell tents + campsite — guests stay on site, no taxis needed</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Shuttle bus runs directly from Bude town centre to the site</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">20 mins from Bude beaches and Summerleaze sea pool</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Potentially available late July — needs enquiry to confirm dates</div></div>
+    </div>
+
+    <div class="pt">
+      <div class="pt-head"><span>What</span><span>Cost</span><span>Notes</span></div>
+      <div class="pt-row"><span class="pt-item">Venue hire — midweek</span><span class="pt-cost">£4,950</span><span class="pt-note">Mon–Thu · stage + bar + kitchen</span></div>
+      <div class="pt-row"><span class="pt-item">Venue hire — weekend</span><span class="pt-cost">£6,950</span><span class="pt-note">Fri–Sat option</span></div>
+      <div class="pt-row"><span class="pt-item">DJ package</span><span class="pt-cost">From £250</span><span class="pt-note">Or live band from £2,600</span></div>
+      <div class="pt-row"><span class="pt-item">Food & drinks</span><span class="pt-cost">~£50pp</span><span class="pt-note">Pizza, welcome drinks, dinner</span></div>
+      <div class="pt-row"><span class="pt-item">6-person bell tent/night</span><span class="pt-cost">£160/night</span><span class="pt-note">Camping from £20/night pp</span></div>
+      <div class="pt-row"><span class="pt-item" style="font-weight:600;color:var(--cream)">TOTAL — 30 people midweek</span><span class="pt-cost" style="font-size:1.1rem">~£243pp</span><span class="pt-note">All in, split 30 ways</span></div>
+    </div>
+
+    <a class="btn" href="https://www.thewyldescornwall.com/private-hire" target="_blank">Enquire at The Wyldes ↗</a>
+    <a class="btn ghost" href="mailto:office@thewyldesgroup.com">office@thewyldesgroup.com ↗</a>
+    <p style="font-size:12px;color:var(--muted);margin-top:.75rem;">📞 01566 781737</p>
+  </div>
+</div>
+
+<!-- ════════════════════ WILD DINING ════════════════════ -->
+<div id="tab-fd" class="sec">
+  <div class="wrap">
+    <div class="sec-title">🍄 Wild & Magical Dining</div>
+    <p class="sec-sub">Farm to table, foraging, outdoor feasts — Sarah will absolutely love these near Bude. Perfect for a birthday dinner with family or the whole crew.</p>
+
+    <div class="dining-hero">
+      <img src="https://coombesheadfarm.co.uk/cdn/shop/files/DSC07065_1600x.jpg?v=1694519018"
+           onerror="this.src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200'"
+           alt="Coombeshead Farm dining"/>
+      <div class="dining-grad"></div>
+      <div class="dining-text">
+        <div class="dining-tag">⭐ Top Pick · 30 mins from Bude · Michelin Plate 2025</div>
+        <div class="dining-name">Coombeshead Farm, Lewannick</div>
+        <div class="dining-note">66 acres · Farm to table · 4-course dinner · £65pp · Famous sourdough + fire cooking</div>
+      </div>
+    </div>
+
+    <div class="hi">
+      <h3>Coombeshead Farm — The Dream Birthday Dinner</h3>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt"><strong style="color:var(--cream)">Michelin Plate 2025</strong> — one of the UK's most acclaimed farm-to-table experiences, ranked #338 in Europe</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Lewannick, near Launceston — just 30-35 minutes from Bude, in the heart of Cornwall</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt">4-course set menu, £65pp — everything grown, reared or foraged on their 66 acres of meadows and woodland</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Famous sourdough (considered one of the country's best), fire cooking, Mangalitsa pigs, heritage vegetables</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Former barn dining room with vaulted ceilings, sheepskin chairs, open fire — completely magical atmosphere</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Open Thursday–Sunday · Private hire available for birthdays and celebrations</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt">Perfect for: the birthday dinner with Jake, Jess and closest friends on the actual birthday week</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="two-col">
+      <div class="hi">
+        <div style="font-size:32px;margin-bottom:.75rem;">🌿</div>
+        <h3>Cornwall Foraging — Stuart</h3>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">Private foraging events — catered at your holiday home/glamping site. From £35pp (min 6 people)</div></div>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">Wild and seasonal Cornish produce, vegetarian, can be vegan/GF</div></div>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">Foraging walk + private cooking = the most uniquely Sarah birthday experience</div></div>
+        <div class="hi-row"><div class="dot"></div><div class="hi-txt">Can combine with Ekopod — foraging walk then cook together at the site</div></div>
+        <a class="rc-link" href="https://www.cornwallforaging.co.uk/" target="_blank">cornwallforaging.co.uk ↗</a>
+      </div>
+      <div class="hi">
+        <div style="font-size:32px;margin-bottom:.75rem;">🌾</div>
+        <h3>Riverford Field Kitchen, Devon</h3>
+        <div class="hi-row"><div class="dot v"></div><div class="hi-txt">Organic farm feast — veg-centric set menu, shared farmhouse tables, 2.5 hours of leisurely eating</div></div>
+        <div class="hi-row"><div class="dot v"></div><div class="hi-txt">6–8 seasonal dishes served in one long flow — no choices, pure seasonal abundance</div></div>
+        <div class="hi-row"><div class="dot v"></div><div class="hi-txt">Garden terrace in summer — true farm to fork, surrounded by herb gardens</div></div>
+        <div class="hi-row"><div class="dot v"></div><div class="hi-txt">Private hire available for birthday celebrations — perfect group experience</div></div>
+        <a class="rc-link" href="https://fieldkitchen.riverford.co.uk/" target="_blank">fieldkitchen.riverford.co.uk ↗</a>
+      </div>
+    </div>
+
+    <div class="hi">
+      <h3>🌊 Rachel Lambert — Coastal Foraging Walks, Cornwall</h3>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Award-winning foraging guide on the Cornish coast — bespoke private experiences available</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">"Absolutely fantastic — she started with a mindful gratitude moment, songs about plants, wild carrot on the coast path"</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Coastal foraging walk + cooking what you find = peak Sarah birthday energy</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">As a newly graduated acupuncturist, Sarah will LOVE the connection between wild plants and healing</div></div>
+      <a class="rc-link" href="https://www.wildpickings.co.uk/" target="_blank">wildpickings.co.uk ↗</a>
+    </div>
+
+    <div class="card-grid">
+      <div class="stat"><div class="stat-lbl">Coombeshead</div><div class="stat-val">£65pp</div><div class="stat-note">4 courses · Michelin Plate · Thu–Sun</div></div>
+      <div class="stat"><div class="stat-lbl">Cornwall Foraging</div><div class="stat-val">From £35pp</div><div class="stat-note">Private · min 6 · cook at your site</div></div>
+      <div class="stat"><div class="stat-lbl">Riverford Kitchen</div><div class="stat-val">~£40pp</div><div class="stat-note">Organic feast · private hire avail</div></div>
+      <div class="stat"><div class="stat-lbl">Drive Coombeshead</div><div class="stat-val">30–35 mins</div><div class="stat-note">From Bude via A30/A395</div></div>
+    </div>
+
+    <a class="btn" href="https://coombesheadfarm.co.uk/pages/dining" target="_blank">Book Coombeshead Farm ↗</a>
+    <a class="btn ghost" href="https://www.cornwallforaging.co.uk/" target="_blank">Cornwall Foraging ↗</a>
+  </div>
+</div>
+
+<!-- ════════════════════ FULL PLAN ════════════════════ -->
+<div id="tab-fp" class="sec">
+  <div class="wrap">
+    <div class="sec-title">✨ The Full Legendary Week</div>
+    <p class="sec-sub">Four chapters. Maximum fun. Built around Sarah's actual life and Jake's actual schedule.</p>
+
+    <div class="vibe">
+      <div class="vibe-txt">
+        <strong>Jake's schedule corrected:</strong> Away Sat 25 – Sun 26 July (friend's wedding). Back Monday 28th for the entire Cornwall midweek, actual birthday Wednesday, AND Weekend 2 glamping. Adult-only throughout. No kids. 🙅
+      </div>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--coral)"></div>
+        <div class="tl-date">Fri 25 – Sun 26 July · Weekend 1</div>
+        <div class="tl-name">Bristol Ferry Party 🚤</div>
+        <div class="tl-desc">Everyone — 20-60 people. Bristol Floating Harbour, private hire. Bar, music, city lights. Jake's at a wedding but all of the Bristol crew are there. She arrives in full festival mode. ~£20–25pp, total low faff.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--gold)"></div>
+        <div class="tl-date">Mon 28 – Thu 31 July · Birthday Week</div>
+        <div class="tl-name">Cornish Escape + Actual Birthday 🌊 <span class="jake-badge">✓ Jake here from Mon</span></div>
+        <div class="tl-desc">Jake is back Monday evening — drive down to Cornwall together. Summerleaze Beach, sea pool, Merrymoor Inn garden, coastal walks. Wednesday 29th birthday dinner at Coombeshead Farm (Michelin-rated, 30 mins, £65pp). Foraging walk if they want it. Optional quick visit to Granddad. Pure golden Cornish magic.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--teal)"></div>
+        <div class="tl-date">Fri 31 Jul – Mon 3 Aug · Weekend 2</div>
+        <div class="tl-name">Ekopod Exclusive Glamping ⛺ <span class="jake-badge">✓ Jake here</span></div>
+        <div class="tl-desc">Closest crew — Jess, Jake, Luca, Toby, Hannah, Rosie. Ekopod exclusive hire, Bodmin Moor. Wild Spa, geodomes under the stars, fire pits, wood-fired pizza, slow mornings. Recovery built in — back to work Tuesday feeling like the most celebrated person alive.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--gold)"></div>
+        <div class="tl-date">★ OR swap Weekend 2 for...</div>
+        <div class="tl-name">The Wyldes — Her Festival 🎪</div>
+        <div class="tl-desc">Exclusive hire near Bude. Real stage, real PA, real bar, her lineup. Everyone camps on site. ~£243pp all in for 30 people. If the dates work — this is the one she tells her grandchildren about.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="card-grid">
+      <div class="stat"><div class="stat-lbl">Ferry Party</div><div class="stat-val">£20–25pp</div><div class="stat-note">Biggest group, lowest cost</div></div>
+      <div class="stat"><div class="stat-lbl">Coombeshead dinner</div><div class="stat-val">£65pp</div><div class="stat-note">Birthday dinner, 30 mins from Bude</div></div>
+      <div class="stat"><div class="stat-lbl">Ekopod glamping</div><div class="stat-val">~£200pp</div><div class="stat-note">Excl. hire + breakfast + Wild Spa</div></div>
+      <div class="stat"><div class="stat-lbl">Full week estimate</div><div class="stat-val">~£350–450pp</div><div class="stat-note">For the complete legendary week</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ NOTEBOOKLM ════════════════════ -->
+<div id="tab-nb" class="sec">
+  <div class="wrap">
+    <div class="sec-title">📓 NotebookLM Documents</div>
+    <p class="sec-sub">Everything generated from your planning conversations — the podcast, roadmaps and vision docs. All ready to share with Sarah.</p>
+
+    <div class="vibe" style="margin-bottom:2rem;">
+      <div class="vibe-txt">
+        These were created by uploading your real voice recordings into NotebookLM. The podcast uses the DUO format — two hosts discussing Sarah's options like best friends hyping her up. <strong>Share the m4a as a WhatsApp Document</strong> (not audio/photo) for full quality. The infographics were generated from the same source material.
+      </div>
+    </div>
+
+    <!-- PODCAST PLAYER -->
+    <div class="audio-label" style="margin-bottom:.75rem;">🎙️ The Podcast</div>
+    <div class="player-box" style="margin-bottom:2rem;max-width:100%;">
+      <div class="play-btn" onclick="tp()">
+        <svg id="pi2" width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="player-info">
+        <div class="p-name">Sarahs_Low_Faff_High_Fun_40th.m4a ✓</div>
+        <div class="p-meta">31:22 · 16MB · Compressed · Ready to send on WhatsApp as Document</div>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" id="pf2"></div></div>
+    </div>
+
+    <!-- NOTEBOOKLM DOCS -->
+    <div class="audio-label" style="margin-bottom:1rem;">📄 NotebookLM Infographics</div>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500" class="doc-img" alt="Roadmap"/>
+        <div class="doc-body">
+          <div class="doc-title">Sarahs_40th_Celebration_Roadmap.jpg</div>
+          <div class="doc-meta">Phase 1 Big Party vs Phase 2 Chilled Recovery · Venues compared · Guest target 15+</div>
+          <a class="link-pill" href="#" target="_blank">Downloaded ✓</a>
+        </div>
+      </div>
+      <div class="doc-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500" class="doc-img" alt="Vision"/>
+        <div class="doc-body">
+          <div class="doc-title">Sarahs_40th_Birthday_Vision.jpg</div>
+          <div class="doc-meta">The Big 4-0 vision · Boatie Bash · Small Group Chill · No-go zones · Venue contenders</div>
+          <a class="link-pill" href="#" target="_blank">Downloaded ✓</a>
+        </div>
+      </div>
+      <div class="doc-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" class="doc-img" alt="Mind Map"/>
+        <div class="doc-body">
+          <div class="doc-title">Sarahs_40th_Mind_Map.jpg</div>
+          <div class="doc-meta">NotebookLM Mind Map · Event Concepts → Accommodation → Logistics → Personal</div>
+          <a class="link-pill" href="#" target="_blank">Downloaded ✓</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hi">
+      <h3>How to Use These with Sarah</h3>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt"><strong style="color:var(--cream)">Step 1:</strong> Send the m4a podcast as a WhatsApp Document — let her listen first, get excited</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt"><strong style="color:var(--cream)">Step 2:</strong> Send this HTML dashboard as a file (or open on your phone and screenshare)</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt"><strong style="color:var(--cream)">Step 3:</strong> Send the three infographic JPGs one by one on WhatsApp for visual impact</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt"><strong style="color:var(--cream)">Step 4:</strong> Let HER choose. It's her birthday. Whatever lights her up is the right answer.</div></div>
+    </div>
+
+    <div class="hi" style="border-color:rgba(255,209,102,.2);">
+      <h3>🌿 The Acupuncture Angle</h3>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Sarah has just graduated as an acupuncturist — this is a DOUBLE celebration</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">The foraging walk with Rachel Lambert or Cornwall Foraging connects beautifully to her practice — wild plants, healing herbs, coastal medicine</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Ekopod's Wild Spa (sauna, cold drench, forest bathing) is the perfect gift for a bodywork practitioner</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt">Consider a personalised congratulations element — a custom wristband, a printed "Dr Sarah" festival badge, something that honours both milestones at once</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ RESEARCH ════════════════════ -->
+<div id="tab-rs" class="sec">
+  <div class="wrap">
+    <div class="sec-title">📋 Research & Booking Links</div>
+    <p class="sec-sub">Everything researched and verified. Book these before summer fills up!</p>
+
+    <div class="r-grid">
+      <div class="rc"><div class="rc-ico">🚤</div><div class="rc-name">Bristol Packet Boats</div><div class="rc-body">Private hire River Avon + Harbour. 25–67 people. Licensed bar, catering, music. From £390 for 2hrs.</div><a class="rc-link" href="https://bristolpacket.co.uk/boat-hire-bristol/" target="_blank">bristolpacket.co.uk ↗</a></div>
+      <div class="rc"><div class="rc-ico">🚤</div><div class="rc-name">Bristol Ferry Boats</div><div class="rc-body">Iconic yellow and blue ferries, Floating Harbour. Private hire for birthdays. Pub hops available.</div><a class="rc-link" href="https://www.bristolferry.com/private-hire/" target="_blank">bristolferry.com ↗</a></div>
+      <div class="rc"><div class="rc-ico">🌿</div><div class="rc-name">Ekopod, Cornwall</div><div class="rc-body">Exclusive hire ~£200pp. Sleeps 26. Geodomes + safari tents. Wild Spa. Bodmin Moor. 20 mins from Bude.</div><a class="rc-link" href="https://ekopod.co.uk/exclusive-hire-glamping-site-cornwall" target="_blank">ekopod.co.uk ↗</a></div>
+      <div class="rc"><div class="rc-ico">🌊</div><div class="rc-name">Nature's Nest, Wye Valley</div><div class="rc-body">4 luxury canvas cottages, each sleeps 6. Hot tubs, River Wye, paddleboards, fire pits. 45 mins Bristol.</div><a class="rc-link" href="https://www.naturesnestglamping.co.uk/" target="_blank">naturesnestglamping.co.uk ↗</a></div>
+      <div class="rc"><div class="rc-ico">🎪</div><div class="rc-name">The Wyldes Cornwall</div><div class="rc-body">Festival site exclusive hire. Midweek £4,950. Stage, PA, bar, kitchen, camping + glamping. Near Bude. 📞 01566 781737</div><a class="rc-link" href="https://www.thewyldescornwall.com/private-hire" target="_blank">thewyldescornwall.com ↗</a></div>
+      <div class="rc"><div class="rc-ico">🍽️</div><div class="rc-name">Coombeshead Farm</div><div class="rc-body">Michelin Plate 2025. Farm to table, Lewannick Cornwall. 30 mins from Bude. 4 courses £65pp. Thu–Sun.</div><a class="rc-link" href="https://coombesheadfarm.co.uk/pages/dining" target="_blank">coombesheadfarm.co.uk ↗</a></div>
+      <div class="rc"><div class="rc-ico">🌾</div><div class="rc-name">Riverford Field Kitchen</div><div class="rc-body">Organic farm feast, Devon. Veg-centric set menu, shared tables. Private hire for birthdays. Garden terrace in summer.</div><a class="rc-link" href="https://fieldkitchen.riverford.co.uk/" target="_blank">fieldkitchen.riverford.co.uk ↗</a></div>
+      <div class="rc"><div class="rc-ico">🍄</div><div class="rc-name">Cornwall Foraging (Stuart)</div><div class="rc-body">Private foraging + cooking events at your holiday home/glamping site. From £35pp (min 6). Wild + seasonal.</div><a class="rc-link" href="https://www.cornwallforaging.co.uk/" target="_blank">cornwallforaging.co.uk ↗</a></div>
+      <div class="rc"><div class="rc-ico">🌊</div><div class="rc-name">Rachel Lambert Foraging</div><div class="rc-body">Coastal foraging walks Cornwall. Bespoke private experiences. Mindful, knowledgeable, perfect for an acupuncturist.</div><a class="rc-link" href="https://www.wildpickings.co.uk/" target="_blank">wildpickings.co.uk ↗</a></div>
+      <div class="rc"><div class="rc-ico">🏖️</div><div class="rc-name">Visit Bude</div><div class="rc-body">Summerleaze Beach + sea pool, Crocklets Beach, canal kayaking, coast path. 3hrs Bristol via M5/A39.</div><a class="rc-link" href="https://www.visitbude.info/" target="_blank">visitbude.info ↗</a></div>
+      <div class="rc"><div class="rc-ico">🍺</div><div class="rc-name">The Merrymoor Inn</div><div class="rc-body">Mawgan Porth coastal pub. Stunning garden, local seafood, sea views. One of the best pub gardens in Cornwall.</div><a class="rc-link" href="https://www.themerrymoor.co.uk/" target="_blank">themerrymoor.co.uk ↗</a></div>
+      <div class="rc"><div class="rc-ico">🎵</div><div class="rc-name">White House on Wye</div><div class="rc-body">Herefordshire tipis in cider orchard. Hire whole site (up to 34). Pizza oven, paddleboards, fire pits.</div><a class="rc-link" href="https://whitehouseonwye.co.uk/" target="_blank">whitehouseonwye.co.uk ↗</a></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="sec-title" style="font-size:1.4rem">🔥 Book These Now</div>
+    <div class="hi" style="margin-top:1rem;">
+      <div class="hi-row"><div class="dot"></div><div class="hi-txt"><strong style="color:var(--cream)">Boat party:</strong> Contact Bristol Packet or Bristol Ferry — check Sat 26 July. Summer books out fast.</div></div>
+      <div class="hi-row"><div class="dot v"></div><div class="hi-txt"><strong style="color:var(--cream)">The Wyldes:</strong> Email office@thewyldesgroup.com or call 01566 781737 — late July may still be free.</div></div>
+      <div class="hi-row"><div class="dot t"></div><div class="hi-txt"><strong style="color:var(--cream)">Ekopod:</strong> Check July 31–Aug 3 at ekopod.co.uk — popular site, books up in summer.</div></div>
+      <div class="hi-row"><div class="dot g"></div><div class="hi-txt"><strong style="color:var(--cream)">Coombeshead:</strong> Book birthday dinner early — Thu/Fri/Sat evenings around 29 July will sell out.</div></div>
+      <div class="hi-row"><div class="dot"></div><div class="hi-txt"><strong style="color:var(--cream)">Most importantly:</strong> Share the podcast with Sarah and let HER choose what lights her up. 🌈</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="stripe" style="margin-bottom:1.5rem;"></div>
+  <p>Made with love by <strong>Jess</strong> for <strong>Sarah's 40th</strong> 🌈</p>
+  <p>Wednesday 29 July 2026 · Bristol, Cornwall & Beyond</p>
+  <p>🎓 Newly graduated acupuncturist + 40 = double the magic</p>
+  <p style="margin-top:8px;font-size:12px;">Research by Claude · Podcast by NotebookLM · Low Faff. High Fun. Totally Legendary.</p>
+</div>
+
+<script>
+function show(n,b){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('tab-'+n).classList.add('on');
+  b.classList.add('on');
+  window.scrollTo({top:document.querySelector('.tabs-wrap').offsetTop-5,behavior:'smooth'});
+}
+
+let playing=false,intv;
+function tp(){
+  playing=!playing;
+  const pi=document.getElementById('pi');
+  const pf=document.getElementById('pf');
+  if(playing){
+    pi.innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    let w=0;
+    intv=setInterval(()=>{
+      w=Math.min(w+100/1882,100);
+      pf.style.width=w+'%';
+      const pf2=document.getElementById('pf2');
+      if(pf2)pf2.style.width=w+'%';
+      if(w>=100){clearInterval(intv);playing=false;pi.innerHTML='<path d="M8 5v14l11-7z"/>';}
+    },1000);
+  }else{
+    clearInterval(intv);
+    pi.innerHTML='<path d="M8 5v14l11-7z"/>';
+  }
+}
+</script>
+</body>
+</html>
